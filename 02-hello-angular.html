@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hello angular</title>
+</head>
+<body ng-app>
+	<!-- 先引入angular文件 -->
+	<!-- ng-app管理的域 -->
+	<div>
+	<!-- ng-model是用于建立数据模型中的other属性到当前元素的value上 -->
+		<input type="text" ng-model="other">
+		<p>hello angular {{another}}</p>
+	</div>
+
+	<!-- 非ng-app管理的域 -->
+	<div>
+		<input type="text" ng-model="another">
+		<span>another {{another}}</span>
+		<span>other {{other}}</span>
+	</div>
+	<script src="node_modules/angular-1.5.2/angular.js"></script>
+</body>
+</html>
+<!-- 
+	1.引入angular
+	2.定义一个模块(系统内置一个公共模块ng-model)
+	3.将ng-app指令(属性)添加到某个元素上,定义angular的作用域
+ -->

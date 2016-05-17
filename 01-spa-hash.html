@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>spa-hash</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			height: 40px;
+		}
+		li {
+			float: left;
+			width: 100px;
+			font-size: 16px;
+			line-height: 40px;
+			text-align: center;
+			list-style: none;
+		}
+		li > a {
+			text-decoration: none;
+		}
+		.container {
+			height: 200px;
+			border: 1px dashed black;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#/music">我的音乐</a></li>
+		<li><a href="#/friend">我的朋友</a></li>
+		<li><a href="#/other">其他兴趣</a></li>
+	</ul>
+	<div class="container"></div>
+	<script>
+	// 仿照路由
+		var con = document.querySelector('.container');
+		window.addEventListener('hashchange',function() {
+			var hash = window.location.hash;
+			console.log(hash);
+			switch(hash) {
+				case '#/music':
+					con.innerHTML = '我的音乐';
+					break;
+				case '#/friend':
+					con.innerHTML = '我的朋友';
+					break;
+				case '#/other':
+					con.innerHTML = '其他兴趣';
+					break;
+				default:
+					con.innerHTML = '暂无'
+					break;
+			};
+		},false);
+	</script>
+</body>
+</html>

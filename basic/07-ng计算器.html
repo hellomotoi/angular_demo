@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<base href="" target="_blank">
+</head>
+<body>
+	<div ng-app="newModule" ng-controller="newCtr">
+		<input type="text" ng-model="preNum">
+		<select id="set">
+			<option value="+">+</option>
+			<option value="-" selected>-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+		</select>
+		<input type="text" ng-model="nextNum">
+		<button ng-click="foo()">=</button>
+		<input type="text" ng-model='resultNum'>
+	</div>
+	<script src="node_modules/angular-1.5.2/angular.js"></script>
+	<script>
+		angular.module('newModule',[])
+			.controller('newCtr',function($scope) {
+				$scope.preNum = '';
+				$scope.nextNum = '';
+				$scope.resultNum = '';
+				$scope.foo = function() {
+					var set = document.querySelector('#set');
+					// console.log(set.value);
+					switch(set.value) {
+						case '+':
+							$scope.resultNum = parseInt($scope.preNum) + parseInt($scope.nextNum);
+							break;
+						case '-':
+							$scope.resultNum = parseInt($scope.preNum) - parseInt($scope.nextNum);
+							break;
+						case '*':
+							$scope.resultNum = parseInt($scope.preNum) * parseInt($scope.nextNum);
+							break;
+						case '/':
+							$scope.resultNum = parseInt($scope.preNum) / parseInt($scope.nextNum);
+							break;
+					}
+				};
+			});
+	</script>
+</body>
+</html>

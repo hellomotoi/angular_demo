@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模块依赖</title>
+</head>
+<body>
+	<div ng-app="myModule" ng-controller="myCtr1">
+		<div>
+			{{value}}
+		</div>
+	</div>
+	<script src="node_modules/angular-1.5.2/angular.js"></script>
+	<script>
+		angular.module('module1',[])
+			.controller('myCtr1',function($scope) {
+				$scope.value = 'happy'
+		});
+		angular.module('myModule',['module1'])
+			.controller('myController',function($scope) {
+
+		});
+	</script>
+</body>
+</html>

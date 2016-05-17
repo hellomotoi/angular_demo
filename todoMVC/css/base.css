@@ -1,0 +1,258 @@
+@charset "utf-8";
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0
+}
+
+body, button, input, select, textarea {
+    font: 12px/1.5 "Microsoft YaHei", Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%
+}
+
+address, cite, dfn, em, var {
+    font-style: normal;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+legend {
+    color: #000;
+}
+
+fieldset, img {
+    border: 0;
+    vertical-align: bottom;
+}
+
+section, article, aside, header, footer, nav, dialog, figure {
+    display: block;
+}
+
+figure {
+    margin: 0;
+}
+
+button, input, select, textarea {
+    font-size: 100%
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+.clear {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both
+}
+
+.clearfix:after {
+    content: '\20';
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    text-decoration: underline;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.noBg {
+    background: none !important;
+}
+
+.noBd {
+    border: none !important;
+}
+
+.mr0 {
+    margin-right: 0 !important;
+    float: right !important;
+}
+
+.info {
+    text-align: justify;
+}
+
+/**body**/
+body {
+    color: #727272;
+}
+
+a {
+    color: #727272;
+}
+
+a:hover {
+    color: #e60012;
+}
+
+/*版心 wrap*/
+.wrap {
+    width: 1202px;
+    margin: 0 auto;
+}
+
+/**header**/
+.header {
+    position: relative;
+    z-index: 11;
+}
+
+.topArea {
+    width: 100%;
+    height: 43px;
+    background: url(../images/toparea.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 13;
+}
+
+/**nav**/
+.nav {
+    float: right;
+    width: 200px;
+    line-height: 43px;
+}
+.nav input {
+    padding-left: 4px;
+    width: 120px;
+    border-radius: 3px;
+    outline: none;
+}
+
+.nav button {
+    border-radius: 10%;
+    width: 50px;
+    margin-left: 5px;
+    background-color: #e50;
+    color: #fff;
+    padding: 0px 4px;
+}
+
+/**footer**/
+.footer {
+}
+
+.footer, .footer a, .footer a:hover {
+    color: #a4a4a4;
+}
+
+.ftMes {
+    background: #5f5f5f;
+    padding: 20px 0 50px;
+}
+
+.ftNav {
+    float: left;
+    margin-top: 20px;
+}
+
+.ftNav dl {
+    width: 100px;
+    float: left;
+    margin-right: 30px;
+}
+
+.ftNav dt {
+    padding-bottom: 5px;
+    font-size: 16px;
+}
+
+.ftNav dd {
+    height: 24px;
+    line-height: 24px;
+}
+
+.ftOth {
+    float: right;
+    width: 375px;
+    margin-top: 20px;
+}
+
+.ftCon {
+    font-size: 14px;
+    padding-left: 8px;
+}
+
+.ewm {
+    padding-top: 12px;
+}
+
+.ewm li {
+    float: left;
+    display: inline;
+    margin-left: 8px;
+    text-align: center;
+}
+
+.ewm li p {
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+.ftOth .txt {
+    font-size: 16px;
+}
+
+.copyRight {
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    font-size: 14px;
+    background: #666;
+}
+
+/*returnTop*/
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.returnTop {
+    position: fixed;
+    bottom: 40px;
+    right: 5px;
+    width: 60px;
+    height: 160px;
+    background: url(../images/rocketTop.png) center center no-repeat;
+    display: none;
+    cursor: pointer;
+    z-index: 999;
+}

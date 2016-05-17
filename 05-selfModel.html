@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义模块</title>
+</head>
+<body>
+	<div ng-app='newModule'>
+		<div ng-controller="newController">
+			<input type="text" ng-model="user.name">
+			<span>{{user.name}}</span>
+		</div>		
+	</div>
+	<script src="node_modules/angular-1.5.2/angular.js"></script>
+	<script>
+		// 定义模块
+		// var newModule = angular.module('newModule',[]);
+		// newModule.controller('newController',function($scope) {
+		// 	$scope.user = {
+		// 		name: 'default'
+		// 	}
+		// });
+
+		// write again
+		// 定义模块,数组中为依赖模块
+		var newModule = angular.module('newModule',[]);
+		// 控制器,控制器名,控制器方法,$scope注入,$scope不能更改,angular规定的数据注入变量名,注意压缩js的混淆模式
+		newModule.controller('newController',function($scope) {
+			$scope.user = {
+				name: ''
+			}
+		});
+	</script>
+</body>
+</html>

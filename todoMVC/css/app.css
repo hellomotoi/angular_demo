@@ -1,0 +1,27 @@
+/*
+
+app-template.css overrides
+
+remove this comment if used
+remove this file if not
+
+*/
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	color: #f60;
+}
+
+.backIndex {
+	cursor: pointer;
+}
+
+.header h1 {
+	color: #f90;
+}
+
+.info {
+	color: black;
+}

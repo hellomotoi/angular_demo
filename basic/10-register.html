@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登陆列表</title>
+	<style type="text/css">
+		ul {
+			width: 250px;
+			height: 200px;
+			/* border: 1px solid red; */
+		}
+		li {
+			list-style: none;
+			height: 40px;
+		}
+		li:nth-child(-n+3) {
+			text-align: right;
+		}
+		li:nth-last-child(-n+2) {
+			text-align: center;
+		}
+		li:nth-child(-n+3) input{
+			float: right;
+			/* color: red; */
+		}
+		.alert {
+			position: absolute;
+			top: 10px;
+			left: 50%;
+			width: 100px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<!-- view start -->
+	<div class="box" ng-app="register" ng-controller="MainCtr">
+		<ul>
+			<li><label>用户名:<input type="text" ng-model="username"></label></li>
+			<li><label>密码:<input type="password" ng-model="password"></label></li>
+			<li><label>确认密码:<input type="password" ng-model="confirm"></label></li>
+			<li><label>阅读用户协议<input type="checkbox" ng-model="agree"></label></li>
+			<li><input type="button" value="登陆" ng-click="registerHandler()"></li>
+		</ul>
+		<div class="alert">{{error_message}}</div>
+	</div>
+	<script src="../node_modules/angular-1.5.2/angular.js"></script>
+	<script>
+		(function(window,angular) {
+			// function User(id,username,password) {
+			// 	this.id = id;
+			// 	this.password = password;
+			// 	this.username = username;
+			// }
+			// User.prototype.save = function() {
+			// 	var userStorage = window.localStorage.getItem('user_storage');
+			// 	var userArray = JSON.parse(userStorage || '[]');
+			// 	userArray.push(this);
+			// 	window.localStorage.setItem('user_storage', JSON.stringify(userArray));
+			// };
+
+			// 使用localStorage
+			function Client(username,password) {
+				this.username = username;
+				this.password = password;
+			}
+			Client.prototype.saveMes = function() {
+				// 开始获取localStorage中的数据
+				var clientMes = JSON.parse(window.localStorage.getItem('client_storage'));
+				var clientArray = clientMes || [];
+				clientArray.push(this);
+				window.localStorage.setItem('client_storage',JSON.stringify(clientArray));
+			}
+
+			// angular 定义模块
+			var registerModule = angular.module('register',[]);
+
+			// angular 定义控制器
+			registerModule.controller('MainCtr',function($scope) {
+				// 定义暴露的成员变量
+				$scope.username = '';
+				$scope.password = '';
+				$scope.confirm = '';
+				$scope.agree = false;
+				$scope.error_message = '';
+				// 定义暴露的业务逻辑
+				$scope.registerHandler = function() {
+					if (!$scope.agree) {
+						$scope.error_message = '请阅读协议';
+						return;
+					}
+					if (!$scope.password || $scope.password !== $scope.confirm) {
+						$scope.error_message = '密码输入不正确';
+						return;
+					}
+					if (!/^[A-Za-z]\w{5,13}$/.test($scope.username)) {
+						$scope.error_message = '用户名格式不正确';
+						return;
+					}
+
+					// 监视模型变化,
+					// $scope.$watch('username',function(now,old) {
+					// 	console.log('now'+now);
+					// 	console.log('old'+old);
+					// 	if (!/^[A-Za-z]\w{5,13}$/.test(now)) {
+					// 		$scope.error_message = '用户名格式不正确';
+					// 		return;
+					// 	}
+					// 	$scope.error_message = '';
+					// 	return;
+					// });
+
+					// 新建client对象
+					var client = new Client($scope.username, $scope.password);
+					client.saveMes();
+				}
+
+				// 监视模型变化
+				// 模型监视器,监视控制器中业务逻辑的最后一项
+				$scope.$watch('username',function(now,old) {
+					console.log('now'+now);
+					console.log('old'+old);
+					if (!/^[A-Za-z]\w{5,13}$/.test(now)) {
+						$scope.error_message = '用户名格式不正确';
+						return;
+					}
+					$scope.error_message = '';
+				});
+
+				// 调试
+				window.$scope = $scope;
+				
+			});
+		})(window,angular);
+	</script>
+</body>
+</html>
+<!-- 
+	0.前台页面写好
+	1.引入angular
+	2.定义angualr模块
+	3.在页面中载入模块
+	4.定义控制器,并且绑定到页面
+	5.设计$scope成员(也就是抽象对象)
+	6.在模板绑定数据
+	7.可以在window中暴露变量来调试
+ -->

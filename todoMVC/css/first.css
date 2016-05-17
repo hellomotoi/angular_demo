@@ -1,0 +1,335 @@
+@charset "utf-8";
+
+/* slide */
+.fullSlide{ 
+    width:100%; 
+    position:relative;  
+    height:550px; 
+    background:#000;
+}
+
+.fullSlide .bd{ 
+    margin:0 auto; 
+    position:relative; 
+    z-index:0; 
+    overflow:hidden;  
+}
+
+.fullSlide .bd ul{ 
+    width:100% !important;  
+}
+
+.fullSlide .bd li{ 
+    width:100% !important;  
+    height:550px; 
+    overflow:hidden; 
+    text-align:center;  
+}
+
+.fullSlide .bd li a{ 
+    display:block; 
+    height:550px; 
+}
+
+.fullSlide .hd{ 
+    width:100%;  
+    position:absolute; 
+    z-index:1; 
+    bottom:0; 
+    left:0; 
+    height:30px; 
+    line-height:30px; 
+    background:url(../images/touming.png) repeat-x; 
+    text-align:center;       
+    _background:#000; _filter:alpha(opacity=60);    
+}
+
+.fullSlide .hd ul{ 
+    text-align:center;  
+    padding-top:5px;  
+}
+
+.fullSlide .hd ul li{ 
+    cursor:pointer; 
+    display:inline-block; 
+    *display:inline; 
+    zoom:1; width:8px; 
+    height:8px; 
+    margin:5px; 
+    background:url(../images/tg_flash_p.png) -18px 0; 
+    overflow:hidden;        
+    line-height:9999px;     
+}
+
+.fullSlide .hd ul .on{ 
+    background-position:0 0; 
+}
+
+/* container */
+.container {
+
+}
+
+/**aArea 我的格言**/
+.aArea {
+    text-align: center;
+    font-size: 16px;
+    line-height: 34px;
+    text-shadow: 0 2px 0 #fff;
+    padding-top: 15px;
+}
+
+/**bArea 我的相册**/
+.bArea {
+    margin-top: 50px;
+}
+
+.bArea .hd {
+    height: 58px;
+    background: url(../images/myPhoto.png) center no-repeat;
+}
+
+.bArea .hd a {
+    display: block;
+    width: 100%;
+    height: 58px;
+}
+
+.bArea .bd {
+    padding-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bArea .bd li {
+    float: left;
+    display: inline;
+    margin-right: 10px;
+}
+
+.bArea .bd li a {
+    display: block;
+    width: 293px;
+    height: 137px;
+    position: relative;
+}
+
+.bArea .bd .txt {
+    width: 293px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 18px;
+    color: #fff;
+    display: none;
+}
+
+.bArea .bd .sb {
+    width: 100%;
+    height: 137px;
+    background: url(../images/sb.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.bArea .bd h3 {
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.bArea .bd li .on .sb {
+    display: block;
+}
+
+.bArea .bd li .on .txt {
+    display: block;
+    text-shadow: 0 2px 0 #333;
+}
+
+/**cArea 我的剧本**/
+.cArea {
+    margin-top: 50px;
+}
+
+.cArea .hd {
+    height: 55px;
+    background: url(../images/myView.png) center no-repeat;
+}
+
+.cArea .hd a {
+    display: block;
+    width: 100%;
+    height: 55px;
+}
+
+.cArea .bd {
+    padding-top: 20px;
+}
+
+.cHd ul {
+    /* margin-left: 342px; */
+    width: 360px;
+    margin: 0 auto;
+}
+
+.cHd ul li {
+    width: 120px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    display: inline;
+}
+
+.cHd ul li.on {
+    background: #bfbfbf;
+}
+
+.box-2 {
+    padding-top: 20px;
+    height: 260px;
+    overflow: hidden;
+}
+
+.box-2 .pic-big {
+    float: left;
+    -webkit-transition: all .6s linear;
+       -moz-transition: all .6s linear;
+        -ms-transition: all .6s linear;
+         -o-transition: all .6s linear;
+            transition: all .6s linear;
+}
+
+.box-2 .pic-big:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.box-2 .pic-sma {
+    float: right;
+    width: 824px;
+}
+
+.box-2 .my-game {
+    float: right;
+    width: 824px;
+    height: 268px;
+}
+
+.box-2 .pic-sma li {
+    width: 200px;
+    height: 126px;
+    position: relative;
+    float: left;
+    display: inline;
+    margin: 0 0 8px 6px;
+    overflow: hidden;
+}
+
+.box-2 .pic-sma img {
+    display: block;
+}
+
+.box-2 .pic-sma .tm {
+    width: 170px;
+    height: 96px;
+    background: url(../images/toparea.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px 0 0 30px;
+    display: none;
+    /* opacity: 0.3; */
+}
+
+.box-2 .pic-sma .tm h2 {
+    font-size: 15px;
+    color: #aaa;
+}
+
+.box-2 .pic-sma .tm a {
+    color: #fff;
+}
+
+.box-2 .pic-sma .tm a:hover {
+    color: #f40;
+}
+
+.box-2 .pic-sma .tm span {
+    color: #fff;
+}
+
+/**dArea 我的留言**/
+.dArea {
+    margin-top: 50px;
+}
+
+.dArea .hd {
+    height: 64px;
+    background: url(../images/myMessage.png) center no-repeat;
+}
+
+.dArea .hd a {
+    display: block;
+    width: 100%;
+    height: 63px;
+}
+
+.dArea .bd {
+    padding-top: 20px;
+}
+
+.dArea .bd ul {
+}
+
+.dArea .bd li {
+    width: 227px;
+    height: 60px;
+    float: left;
+    display: inline;
+    margin: 0 12px 18px 0;
+}
+
+.dArea .pic {
+    float: left;
+}
+
+.dArea .txt {
+    width: 151px;
+    height: 50px;
+    background: url(../images/txt.png) left top no-repeat;
+    float: right;
+    padding: 5px 0 0 12px;
+    cursor: pointer;
+}
+
+.dArea .speakingBox {
+    width: 100%;
+    padding-bottom: 5px; 
+}
+
+.dArea .speakingBox textarea {
+    resize: none;
+    outline: none;
+    border: 1px solid #f40;
+    padding: 3px;
+    border-radius: 3px;
+    background-color: #eee;
+}
+
+.dArea .speakingBox span {
+    float: right;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #000;
+    border-radius: 7px;
+    background-color: #f40;
+    margin-top: 80px;
+    color: #fff;
+    cursor: pointer;
+}

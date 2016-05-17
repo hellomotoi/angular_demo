@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定义模块</title>
+</head>
+<body>
+	<div ng-app="module2">
+		<div ng-controller="module1Controller">
+			{{value}}
+		</div>
+	</div>
+	<script src="node_modules/angular-1.5.2/angular.js"></script>
+	<script>
+	angular.module('module1',[])
+		.controller('module1Controller',function($scope) {
+			$scope.value = 'module1Value';
+	});
+	// 新建模块,并且添加依赖关系
+	angular.module('module2',['module1']);
+
+	// 获取模块2
+	var m2 = angular.module('module2');
+	console.log(m3);
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ngClick</title>
+</head>
+<body>
+	<div ng-app="newModule" ng-controller="newCtr">
+		<input type="text" ng-model="pre">
+		+
+		<input type="text" ng-model="nex">
+		<button ng-click="foo()">=</button>
+		<!-- <input type="text" ng-model="res"> -->
+		<span>{{res}}</span>
+	</div>
+	<script src="node_modules/angular-1.5.2/angular.js"></script>
+	<script>
+		var newModule = angular.module('newModule',[]);
+		newModule.controller('newCtr',function($scope){
+			$scope.pre = 0,
+			$scope.nex = 0,
+			// $scope.res = 0,
+			// 业务逻辑
+			$scope.foo = function() {
+				$scope.res = parseInt($scope.pre) + parseInt($scope.nex);
+			};
+		});
+	</script>
+</body>
+</html>
