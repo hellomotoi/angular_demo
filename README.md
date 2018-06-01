@@ -1,2 +1,1 @@
-# trYangulaR
-angularDemo
+# angularDemo
